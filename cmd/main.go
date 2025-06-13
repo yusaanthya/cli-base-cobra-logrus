@@ -3,21 +3,21 @@ package main
 import (
 	"os"
 
+	"github.com/Anthya1104/go-cli-base/pkg/cobra"
+	"github.com/Anthya1104/go-cli-base/pkg/config"
+	"github.com/Anthya1104/go-cli-base/pkg/logger"
 	"github.com/sirupsen/logrus"
-	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "app",
-	Short: "A base CLI app with Cobra and logrus",
-	Run: func(cmd *cobra.Command, args []string) {
-		logrus.Info("Hello from the base CLI app!")
-	},
-}
-
 func main() {
-	if err := rootCmd.Execute(); err != nil {
+
+	if err := logger.InitLogger(config.LogLevelInfo); err != nil {
+		logrus.Fatalf(("Error initializing Logger : %v"), err)
+	}
+
+	if err := cobra.InitCmd(); err != nil {
 		logrus.Fatalf("Error executing command: %v", err)
 		os.Exit(1)
 	}
+
 }
