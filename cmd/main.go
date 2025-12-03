@@ -3,10 +3,10 @@ package main
 import (
 	"os"
 
-	"github.com/Anthya1104/go-cli-base/pkg/cobra"
-	"github.com/Anthya1104/go-cli-base/pkg/config"
-	"github.com/Anthya1104/go-cli-base/pkg/logger"
 	"github.com/sirupsen/logrus"
+	"github.com/yusaanthya/cli-base-cobra-logrus/pkg/cobra"
+	"github.com/yusaanthya/cli-base-cobra-logrus/pkg/config"
+	"github.com/yusaanthya/cli-base-cobra-logrus/pkg/logger"
 )
 
 func main() {
