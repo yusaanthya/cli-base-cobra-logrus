@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Anthya1104/go-cli-base/pkg/config"
 	"github.com/sirupsen/logrus"
+	"github.com/yusaanthya/cli-base-cobra-logrus/pkg/config"
 )
 
 func InitLogger(level string) error {
