@@ -39,10 +39,14 @@ jobs:
       - name: Setup Go
         uses: ./.github/actions/setup-go
 
+      - name: Check Go formatting
+        run: test -z "$(gofmt -l .)"
+
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@db9de0fc1a667e1a49d2291a1a042dff081d78f6 # v9
         with:
-          version: latest
+          version: v2.15.0
+          args: --timeout=5m
 
   build:
     name: Build
